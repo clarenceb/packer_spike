@@ -1,7 +1,25 @@
 Evaluating the Packer tool
 ==========================
 
-Trying out the [Packer](http://www.packer.io) tool
+Trying out the [Packer](http://www.packer.io) tool.
+
+Pre-requisites:
+
+* Install packer
+* Install VirtualBox 4.3.6
+
+Running the example:
+
+    packer build centos65.json
+
+Resulting OVF file will be in:
+
+    output-virtualbox
+
+Add the VM to VirtualBox to try it out:
+
+    cd output-virtualbox
+    open centos65.ovf      # On Mac OS X; otherwise start VirtualBox and import the OVF file.
 
 The following example code and related scripts for the Centos 6.5 were used as a reference:
 [https://github.com/misheska/basebox-packer/blob/master/template/centos/centos65.json](https://github.com/misheska/basebox-packer/blob/master/template/centos/centos65.json).
