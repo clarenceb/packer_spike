@@ -3,6 +3,7 @@
 		"iso_url_base": "cache",
 		"guest_additions_url_base": "cache"
 	},
+
 	"builders": [{
 	    "vm_name": "centos65",
 		"type": "virtualbox",
@@ -30,5 +31,16 @@
      		["modifyvm", "{{.Name}}", "--memory", "512"],
       		["modifyvm", "{{.Name}}", "--cpus", "1"]
     	]
+	}],
+
+	"provisioners" : [{
+		"type": "shell",
+		"environment_vars": [
+		],
+		"execute_command": "echo 'provisioner' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+		"scripts": [
+			"scripts/sshd.sh",
+			"scripts/vmtools.sh"
+		]
 	}]
 }

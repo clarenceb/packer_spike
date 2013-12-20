@@ -3,8 +3,10 @@ Evaluating the Packer tool
 
 Trying out the [Packer](http://www.packer.io) tool
 
-The following example code for the Centos 6.5 template was used as a reference and for learning:
-[https://github.com/misheska/basebox-packer/blob/master/template/centos/centos65.json](https://github.com/misheska/basebox-packer/blob/master/template/centos/centos65.json)
+The following example code and related scripts for the Centos 6.5 were used as a reference:
+[https://github.com/misheska/basebox-packer/blob/master/template/centos/centos65.json](https://github.com/misheska/basebox-packer/blob/master/template/centos/centos65.json).
+
+Have a look at the repo [https://github.com/misheska/basebox-packer/](https://github.com/misheska/basebox-packer/) for other good examples Packer templates and in particular building Vagrant base boxes.
 
 The Centos 6.5 ISO can be downloaded from [here](http://mirrors.kernel.org/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso)
 
