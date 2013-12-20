@@ -1,13 +1,17 @@
 {
+	"variables": {
+		"iso_url_base": "cache",
+		"guest_additions_url_base": "cache"
+	},
 	"builders": [{
 	    "vm_name": "centos65",
 		"type": "virtualbox",
 		"iso_checksum": "83221db52687c7b857e65bfe60787838",
 		"iso_checksum_type": "md5",
-		"iso_url": "cache/CentOS-6.5-x86_64-bin-DVD1.iso",
+		"iso_url": "{{user `iso_url_base`}}/CentOS-6.5-x86_64-bin-DVD1.iso",
 		"guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
 		"guest_additions_sha256": "95648fcdb5d028e64145a2fe2f2f28c946d219da366389295a61fed296ca79f0",
-		"guest_additions_url": "cache/VBoxGuestAdditions_{{.Version}}.iso",
+		"guest_additions_url": "{{user `guest_additions_url_base`}}/VBoxGuestAdditions_{{.Version}}.iso",
 		"virtualbox_version_file": ".vbox_version",
 		"http_directory": "http_files",
 		"shutdown_command": "echo 'provisioner' | sudo -S shutdown -P now",
