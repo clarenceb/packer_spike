@@ -1,0 +1,30 @@
+{
+	"builders": [{
+	    "vm_name": "centos65",
+		"type": "virtualbox",
+		"iso_checksum": "83221db52687c7b857e65bfe60787838",
+		"iso_checksum_type": "md5",
+		"iso_url": "cache/CentOS-6.5-x86_64-bin-DVD1.iso",
+		"guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+		"guest_additions_sha256": "95648fcdb5d028e64145a2fe2f2f28c946d219da366389295a61fed296ca79f0",
+		"guest_additions_url": "cache/VBoxGuestAdditions_{{.Version}}.iso",
+		"virtualbox_version_file": ".vbox_version",
+		"http_directory": "http_files",
+		"shutdown_command": "echo 'provisioner' | sudo -S shutdown -P now",
+		"ssh_username": "provisioner",
+		"ssh_password": "provisioner",
+		"ssh_wait_timeout": "20m",
+		"boot_command": [
+      		"<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks.cfg<enter>"
+    	],
+		"disk_size": "10000",
+		"format": "ovf",
+		"guest_os_type": "RedHat_64",
+		"hard_drive_interface": "sata",
+		"headless": "false",
+		"vboxmanage": [
+     		["modifyvm", "{{.Name}}", "--memory", "512"],
+      		["modifyvm", "{{.Name}}", "--cpus", "1"]
+    	]
+	}]
+}
